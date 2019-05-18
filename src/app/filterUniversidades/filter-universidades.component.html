@@ -1,0 +1,24 @@
+<StackLayout orientation="vertical">
+    <label text="Busqueda de universidades del mundo" verticalAlignment="center" style="text-align: center"
+        marginTop="20">
+    </label>
+    <TextField hint="ingresa la busqueda" verticalAlignment="center" style="text-align: center; margin: 25px"
+        id="textFilter"> </TextField>
+    <button class="btn btn-orange btn-active" text="Buscar"
+        style="text-align: center ; background-color: green ; color: white" (tap)="buscar()"></button>
+    <button class="btn btn-primary btn-active" text="Ubicarme" style="text-align: center"
+        (tap)="buscarUbicacion()"></button>
+
+    <ListView [items]="items" class="list-group">
+        <ng-template let-item="item">
+            <GridLayout rows="auto,auto,auto" columns="*, auto,auto" class="list-group-item">
+                <Label [text]="item.name"  row="0" col="0"></Label>
+                <Label [text]="item.country"  row="1" col="0"></Label>
+                <Label [text]="item.web_pages[0]"  row="2" col="0"></Label>
+            </GridLayout>
+
+        </ng-template>
+    </ListView>
+
+
+</StackLayout>
